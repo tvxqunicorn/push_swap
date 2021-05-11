@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_deque.c                                         :+:      :+:    :+:   */
+/*   ft_deque_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 18:14:13 by xli               #+#    #+#             */
-/*   Updated: 2021/05/11 10:41:26 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 10:42:32 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_deque	*init_deque(void)
 	deque->head = NULL;
 	deque->tail = NULL;
 	deque->size = 0;
-	return (deque);
 }
 
 void	deque_push_back(t_deque *deque, void *ptr)
@@ -30,7 +29,7 @@ void	deque_push_back(t_deque *deque, void *ptr)
 	t_deque_list	*temp;
 
 	(deque->size)++;
-	temp = init_deque_list(ptr);
+	temp = init_deque();
 	if (temp == NULL)
 		return ;
 	if (deque->size == 1)
@@ -49,7 +48,6 @@ void	deque_push_front(t_deque *deque, void *ptr)
 	t_deque_list	*temp;
 
 	(deque->size)++;
-	temp = init_deque_list(ptr);
 	if (temp == NULL)
 		return ;
 	if (deque->size == 1)

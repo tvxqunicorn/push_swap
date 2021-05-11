@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 13:58:58 by xli               #+#    #+#             */
-/*   Updated: 2021/05/10 18:14:34 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 10:32:17 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,28 +101,4 @@ double	ft_atodouble(char **str)
 		num /= 10.0;
 	}
 	return (ans + num);
-}
-
-double	ft_neg_double(char **str, char *msg)
-{
-	double	sign;
-
-	if (!str || !msg || !str[0])
-		return (0.0);
-	while (**str && ft_isdigit(**str) && **str != '.' && **str != '-')
-		(*str)++;
-	sign = 1.0;
-	if (**str == 0)
-	{
-		printf("%s ", msg);
-		error_exit("not found\n");
-	}
-	if (**str == '-')
-	{
-		sign *= -1.0;
-		(*str)++;
-		if (!ft_isdigit(**str))
-			error_exit("negative number in wrong format\n");
-	}
-	return (sign * ft_atodouble(str));
 }

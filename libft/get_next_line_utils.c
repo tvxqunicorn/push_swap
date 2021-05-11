@@ -6,11 +6,11 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 13:24:43 by xli               #+#    #+#             */
-/*   Updated: 2021/05/10 18:15:12 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 10:43:00 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 size_t	get_len(const char *s)
 {

@@ -6,7 +6,7 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/25 13:44:54 by xli               #+#    #+#              #
-#    Updated: 2021/05/11 09:33:55 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/11 10:39:23 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ BONUS_SRCS =	ft_lstnew.c \
 				ft_memory_utils.c \
 				ft_minmax.c \
 				ft_deque.c \
+				ft_deque_utils.c\
 				get_next_line.c \
 				get_next_line_utils.c
 

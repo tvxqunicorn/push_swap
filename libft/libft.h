@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:29:29 by xli               #+#    #+#             */
-/*   Updated: 2021/05/11 09:35:21 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 10:39:55 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stddef.h>
+# include <stdio.h>
 # include "get_next_line.h"
 
 typedef struct s_list
@@ -102,11 +103,12 @@ void				ft_free_all(void);
 int					ft_min(int a, int b);
 int					ft_max(int a, int b);
 double				ft_atodouble(char **str);
-double				ft_neg_double(char **str, char *msg);
-t_deque				*init_deque(void)
+t_deque				*init_deque(void);
 void				deque_push_back(t_deque *deque, void *ptr);
 void				deque_push_front(t_deque *deque, void *ptr);
 void				deque_pop_back(t_deque *deque, void (* f)(void *));
 void				deque_pop_front(t_deque *deque, void (* f)(void *));
+t_deque_list		*init_deque_list(void *ptr);
+void				deque_clear(t_deque *deque, void (* f)(void *));
 
 #endif

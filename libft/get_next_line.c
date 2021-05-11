@@ -6,11 +6,11 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 10:26:55 by xli               #+#    #+#             */
-/*   Updated: 2021/05/10 18:15:22 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 10:43:07 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*get_save(char *save)
 {
