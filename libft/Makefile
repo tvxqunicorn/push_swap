@@ -6,7 +6,7 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/25 13:44:54 by xli               #+#    #+#              #
-#    Updated: 2021/05/11 10:39:23 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/17 16:33:23 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS =	ft_memset.c \
 		ft_isalnum.c \
 		ft_isascii.c \
 		ft_isprint.c \
+		ft_isspace.c \
 		ft_toupper.c \
 		ft_tolower.c \
 		ft_calloc.c \
@@ -65,6 +66,7 @@ BONUS_SRCS =	ft_lstnew.c \
 				ft_minmax.c \
 				ft_deque.c \
 				ft_deque_utils.c\
+				ft_sort.c\
 				get_next_line.c \
 				get_next_line_utils.c
 

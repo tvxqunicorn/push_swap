@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:29:29 by xli               #+#    #+#             */
-/*   Updated: 2021/05/11 10:39:55 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/17 16:33:07 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_isspace(char c);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -110,5 +111,6 @@ void				deque_pop_back(t_deque *deque, void (* f)(void *));
 void				deque_pop_front(t_deque *deque, void (* f)(void *));
 t_deque_list		*init_deque_list(void *ptr);
 void				deque_clear(t_deque *deque, void (* f)(void *));
+void				ft_sort(int *arr, int arr_size);
 
 #endif
