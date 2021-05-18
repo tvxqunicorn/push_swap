@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:14:39 by xli               #+#    #+#             */
-/*   Updated: 2021/05/17 16:08:08 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/18 14:17:43 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int ac, char **av)
 	ct[0] = -1;
 	while (++ct[0] < ct[1])
 		arr[2][ct[0]] = arr[0][ct[0]];
-	ft_sort(arr[1], ct[1]);
 	index_nb(arr[1], arr[2], ct[1]);
 	normal_exit();
 }

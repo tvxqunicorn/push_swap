@@ -6,7 +6,7 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 15:34:00 by xli               #+#    #+#              #
-#    Updated: 2021/05/17 16:27:20 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/18 14:44:48 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
 
 INCLUDES_PATH = includes/
 

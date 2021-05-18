@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 16:23:52 by xli               #+#    #+#             */
-/*   Updated: 2021/05/17 16:26:15 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/18 14:44:02 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,30 @@ void	exit_handle(int ct[2], int *arr[3], t_deque *stack[2])
 
 void	index_nb(int *arr, int *temp, int arr_size)
 {
-	int	*hash;
-	int	*a;
-	int	ct;
+	t_deque			*a;
+	int				ct[2];
 
-	hash = ft_malloc(arr_size, sizeof(int));
-	if (hash == NULL)
-		error_exit();
-	ct = -1;
-	while (++ct < arr_size)
-		temp[ct] = arr[ct];
-	ct = -1;
-	while (++ct < arr_size)
-		hash[temp[ct]] = ct;
-	ct = -1;
-	while (++ct < arr_size)
-		arr[ct] = hash[arr[ct]];
-	ct = -1;
-	a = ft_malloc(arr_size, sizeof(int));
-	if (a == NULL)
-		error_exit();
-	while (++ct < arr_size)
-		a[ct] = arr[ct];
+	ct[0] = -1;
+	while (++ct[0] < arr_size)
+		temp[ct[0]] = arr[ct[0]];
+	ft_sort(arr, arr_size);
+	ct[0] = -1;
+	while (++ct[0] < arr_size)
+	{
+		ct[1] = -1;
+		while (++ct[1] < arr_size)
+		{
+			if (arr[ct[0]] == temp[ct[1]])
+				arr[ct[0]] = ct[1];
+		}
+	}
+	a = init_deque();
+	for(int i = 0 ; i < arr_size ; ++i)
+		deque_push_front(a, arr + i);
+	t_deque_list	*iter = a->tail;
+	while (iter)
+	{
+		printf("%d\n", *((int*)iter->content));
+		iter = iter->last;
+	}
 }

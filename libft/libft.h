@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:29:29 by xli               #+#    #+#             */
-/*   Updated: 2021/05/17 16:33:07 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/18 14:25:57 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ typedef struct s_deque
 	struct s_deque_list	*tail;
 	int					size;
 }					t_deque;
-
 
 int					ft_atoi(const char *str);
 int					ft_atoi_max(char **str);
@@ -107,10 +106,10 @@ double				ft_atodouble(char **str);
 t_deque				*init_deque(void);
 void				deque_push_back(t_deque *deque, void *ptr);
 void				deque_push_front(t_deque *deque, void *ptr);
-void				deque_pop_back(t_deque *deque, void (* f)(void *));
-void				deque_pop_front(t_deque *deque, void (* f)(void *));
+void				deque_pop_back(t_deque *deque, void (*f)(void *));
+void				deque_pop_front(t_deque *deque, void (*f)(void *));
 t_deque_list		*init_deque_list(void *ptr);
-void				deque_clear(t_deque *deque, void (* f)(void *));
+void				deque_clear(t_deque *deque, void (*f)(void *));
 void				ft_sort(int *arr, int arr_size);
 
 #endif
