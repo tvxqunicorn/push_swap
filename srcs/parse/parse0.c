@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:02:18 by xli               #+#    #+#             */
-/*   Updated: 2021/05/17 16:30:11 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 09:27:42 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ int	get_arr_size(int **arr, int ac, char **av)
 	int		ct;
 
 	lst = NULL;
-	*arr = ft_malloc(ft_lstsize(lst), sizeof(int));
 	if (ac == 1)
 		return (0);
 	ct = 0;
 	while (++ct < ac)
 		put_nb_in_list(&lst, av[ct]);
+	*arr = ft_malloc(ft_lstsize(lst), sizeof(int));
 	if (*arr == NULL)
 		error_exit();
 	ct = 0;

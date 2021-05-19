@@ -6,7 +6,7 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 15:34:00 by xli               #+#    #+#              #
-#    Updated: 2021/05/18 14:44:48 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/19 10:14:45 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ INCLUDES = $(INCLUDES_PATH)push_swap.h
 
 SRCS_PATH = srcs/push_swap/
 
-SRCS_FILES = push_swap.c
+SRCS_FILES = big_solve.c push_swap.c
 
 MAIN = srcs/push_swap/main.c
 
@@ -40,7 +40,8 @@ SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 
 PARSE_PATH = srcs/parse/
 
-PARSE_FILES = operation0.c operation1.c operation2.c operation3.c exit.c parse.c
+PARSE_FILES = operation0.c operation1.c operation2.c operation3.c exit.c\
+			parse0.c parse1.c
 
 PARSE_SRCS = $(addprefix $(PARSE_PATH), $(PARSE_FILES))
 

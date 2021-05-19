@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 18:14:13 by xli               #+#    #+#             */
-/*   Updated: 2021/05/18 14:25:10 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 09:29:59 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	deque_push_front(t_deque *deque, void *ptr)
 		return ;
 	}
 	temp->next = deque->head;
-	deque->head->next = temp;
+	deque->head->last = temp;
 	deque->head = deque->head->last;
 }
 

@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:31:10 by xli               #+#    #+#             */
-/*   Updated: 2021/05/17 10:31:30 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 15:27:31 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@ void	ft_sort(int *arr, int arr_size)
 	{
 		is_sorted = 1;
 		j = -1;
-		while (++j < arr_size - 1 - 1)
+		while (++j < arr_size - 1 - i)
 		{
-			temp = arr[j];
-			arr[j] = arr[j + 1];
-			arr[j + 1] = temp;
-			is_sorted = 0;
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+				is_sorted = 0;
+			}
 		}
 		if (is_sorted)
 			break ;
