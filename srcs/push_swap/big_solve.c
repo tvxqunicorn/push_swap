@@ -6,22 +6,23 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 14:02:04 by xli               #+#    #+#             */
-/*   Updated: 2021/05/19 16:49:51 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 09:54:16 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	index_nb(t_deque *stack, int *arr, int *temp, int arr_size)
+void	index_nb(t_deque *a, int *arr, int arr_size)
 {
-	t_deque	*a;
+	int		*temp;
 	int		ct[2];
 
-	(void)stack;
+	temp = ft_malloc(arr_size, sizeof(int));
+	if (temp == NULL)
+		return ;
 	ct[0] = -1;
 	while (++ct[0] < arr_size)
 		temp[ct[0]] = arr[ct[0]];
-	//ft_sort(arr, arr_size);
 	ct[0] = -1;
 	while (++ct[0] < arr_size)
 	{
@@ -29,7 +30,10 @@ void	index_nb(t_deque *stack, int *arr, int *temp, int arr_size)
 		while (++ct[1] < arr_size)
 		{
 			if (arr[ct[0]] == temp[ct[1]])
+			{
 				arr[ct[0]] = ct[1];
+				break ;
+			}
 		}
 	}
 	a = init_deque();
