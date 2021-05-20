@@ -6,32 +6,25 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 14:02:04 by xli               #+#    #+#             */
-/*   Updated: 2021/05/20 11:29:26 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 14:41:18 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	index_nb(t_deque *a, int *arr, int arr_size)
+void	index_nb(t_deque *a, int *arr[2], int arr_size)
 {
-	int		*temp;
 	int		ct[2];
 
-	temp = ft_malloc(arr_size, sizeof(int));
-	if (temp == NULL)
-		return ;
-	ct[0] = -1;
-	while (++ct[0] < arr_size)
-		temp[ct[0]] = arr[ct[0]];
 	ct[0] = -1;
 	while (++ct[0] < arr_size)
 	{
 		ct[1] = -1;
 		while (++ct[1] < arr_size)
 		{
-			if (arr[ct[0]] == temp[ct[1]])
+			if (arr[0][ct[0]] == arr[1][ct[1]])
 			{
-				arr[ct[0]] = ct[1];
+				arr[0][ct[0]] = ct[1];
 				break ;
 			}
 		}
@@ -40,12 +33,6 @@ void	index_nb(t_deque *a, int *arr, int arr_size)
 	ct[0] = -1;
 	while (++ct[0] < arr_size)
 		deque_push_front(a, arr + ct[0]);
-	//t_deque_list	*iter = a->tail;
-	//while (iter)
-	//{
-	//	printf("%d\n", *((int*)iter->content));
-	//	iter = iter->last;
-	//}
 }
 
 void	big_solve(t_deque *stack[2], t_deque *operations)
@@ -55,7 +42,7 @@ void	big_solve(t_deque *stack[2], t_deque *operations)
 	int	top_nb;
 
 	max_bits = 0;
-	while ((stack[0]->size - 1) >> max_bits)
+	while ((1 << max_bits) < stack[0]->size)
 		++max_bits;
 	ct[0] = -1;
 	while (++ct[0] < max_bits)
@@ -65,11 +52,20 @@ void	big_solve(t_deque *stack[2], t_deque *operations)
 		{
 			top_nb = *(int *)stack[0]->tail;
 			if (top_nb >> ct[0] & 1)
+			{
 				do_operations(stack, "ra", operations);
+				write(1, "ra\n", 3);
+			}
 			else
+			{
 				do_operations(stack, "pb", operations);
+				write(1, "pb\n", 3);
+			}
 		}
-		while (stack[1]->size != 0)
+		while (stack[1]->size > 0)
+		{
 			do_operations(stack, "pa", operations);
+			write(1, "pa\n", 3);
+		}
 	}
 }

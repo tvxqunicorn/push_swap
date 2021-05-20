@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:14:39 by xli               #+#    #+#             */
-/*   Updated: 2021/05/20 11:28:20 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 14:40:41 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,13 @@ int	main(int ac, char **av)
 	ft_sort(arr[1], ct[1]); //sorted done
 	//for (int i = 0; i < ct[1] ; i++)
 	//	printf("sorted = %d\n", arr[1][i]);
-	index_nb(stack[0], arr[1], ct[1]); //index done
+	index_nb(stack[0], arr, ct[1]); //index done
+	//t_deque_list	*iter = stack[0]->head;
+	//while (iter)
+	//{
+	//	printf("indexed = %d\n", *((int*)iter->content));
+	//	iter = iter->next;
+	//}
 	operations = push_swap(stack);
-	display_operations(operations, arr[1], ct[1], 1);
 	normal_exit();
 }
