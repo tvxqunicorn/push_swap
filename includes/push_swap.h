@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:59 by xli               #+#    #+#             */
-/*   Updated: 2021/05/20 09:43:10 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 10:51:59 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	check_instructions(char *str);
 int		is_sorted(t_deque *stack[2]);
 void	index_nb(t_deque *a, int *arr, int arr_size);
 void	big_solve(t_deque *stack[2], t_deque *operations);
+void	display_operations(t_deque *operations, int *arr, int arr_size, int fd);
 t_deque	*push_swap(t_deque *stack[2]);
 
 #endif

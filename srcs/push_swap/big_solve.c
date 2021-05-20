@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 14:02:04 by xli               #+#    #+#             */
-/*   Updated: 2021/05/20 09:54:16 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 11:29:26 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ void	index_nb(t_deque *a, int *arr, int arr_size)
 	ct[0] = -1;
 	while (++ct[0] < arr_size)
 		deque_push_front(a, arr + ct[0]);
-	t_deque_list	*iter = a->tail;
-	while (iter)
-	{
-		printf("%d\n", *((int*)iter->content));
-		iter = iter->last;
-	}
+	//t_deque_list	*iter = a->tail;
+	//while (iter)
+	//{
+	//	printf("%d\n", *((int*)iter->content));
+	//	iter = iter->last;
+	//}
 }
 
 void	big_solve(t_deque *stack[2], t_deque *operations)
