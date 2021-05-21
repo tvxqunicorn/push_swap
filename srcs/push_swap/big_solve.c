@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 14:02:04 by xli               #+#    #+#             */
-/*   Updated: 2021/05/21 11:14:19 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:11:48 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	big_solve(t_deque *stack[2], t_deque *operations)
 		while (++ct[1] < size)
 		{
 			top_nb = *(int *)stack[0]->tail->content;
-			//printf("top_nb: %d\n", top_nb);
-			//printf("ct[0]: %d\n", ct[0]);
-			//printf(">>: %d\n", (top_nb >> ct[0]) & 1);
+			//printf("top_nb:			%d\n", top_nb);
+			//printf("ct[0]:			%d\n", ct[0]);
+			//printf("top_nb >> ct[0]) & 1:	%d\n", (top_nb >> ct[0]) & 1);
 			if ((top_nb >> ct[0]) & 1)
 			{
 				do_operations(stack, "ra", operations);

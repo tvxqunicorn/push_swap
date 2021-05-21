@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:14:03 by xli               #+#    #+#             */
-/*   Updated: 2021/05/19 16:48:33 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:10:38 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init_stack(t_deque *stack, int *arr, int arr_size)
 
 	ct = -1;
 	while (++ct < arr_size)
-		deque_push_back(stack, arr + ct);
+		deque_push_front(stack, arr + ct);
 }
 
 void	assign_operation(t_deque *stack[2], void *ptr)

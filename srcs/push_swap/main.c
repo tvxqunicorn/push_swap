@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:14:39 by xli               #+#    #+#             */
-/*   Updated: 2021/05/20 14:40:41 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:27:40 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	main(int ac, char **av)
 	int		*arr[2];
 	int		ct[2];
 	t_deque	*stack[2];
-	t_deque	*operations;
 
 	ct[1] = get_arr_size(arr, ac, av);
 	init(ct, arr, stack);
@@ -52,6 +51,6 @@ int	main(int ac, char **av)
 	//	printf("indexed = %d\n", *((int*)iter->content));
 	//	iter = iter->next;
 	//}
-	operations = push_swap(stack);
+	push_swap(stack);
 	normal_exit();
 }
