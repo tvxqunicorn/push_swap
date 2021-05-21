@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   parse0.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:02:18 by xli               #+#    #+#             */
-/*   Updated: 2021/05/19 09:27:42 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 14:36:58 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ static void	put_nb_in_list(t_list **lst, char *str)
 {
 	int	*temp;
 
-	temp = ft_malloc(1, sizeof(temp));
 	while (*str)
 	{
 		if (ft_isspace(*str))
 			str++;
 		else if (ft_isdigit(*str) || *str == '+' || *str == '-')
 		{
-			if (temp == NULL)
+			temp = ft_malloc(1, sizeof(temp));
+			if (!temp)
 				error_exit();
 			*temp = ft_atoi_max(&str);
 			ft_lstadd_back(lst, ft_lstnew((void *)temp));
