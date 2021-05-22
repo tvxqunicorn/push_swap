@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 16:23:52 by xli               #+#    #+#             */
-/*   Updated: 2021/05/20 15:07:13 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 14:04:08 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ t_deque	*push_swap(t_deque *stack[2])
 
 	operations = init_deque();
 	if (is_sorted(stack))
-	{
-		printf("sorted\n");
 		return (operations);
-	}
 	if (stack[0]->size <= 5)
-		printf("small solve\n");
+		small_solve(stack, operations);
 	else
 		big_solve(stack, operations);
 	return (operations);

@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:02:18 by xli               #+#    #+#             */
-/*   Updated: 2021/05/21 14:36:58 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 12:06:22 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	put_nb_in_list(t_list **lst, char *str)
 			temp = ft_malloc(1, sizeof(temp));
 			if (!temp)
 				error_exit();
-			*temp = ft_atoi_max(&str);
+			*temp = ft_atoi_with_range(&str);
 			ft_lstadd_back(lst, ft_lstnew((void *)temp));
 		}
 		else
@@ -75,7 +75,7 @@ int	get_arr_size(int **arr, int ac, char **av)
 	return (ct);
 }
 
-void	check_instructions(char *str)
+/*void	check_instructions(char *str)
 {
 	if (!ft_strncmp(str, "sa", 3))
 		return ;
@@ -99,4 +99,4 @@ void	check_instructions(char *str)
 		return ;
 	if (!ft_strncmp(str, "rrr", 4))
 		return ;
-}
+}*/

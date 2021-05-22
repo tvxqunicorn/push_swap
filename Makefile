@@ -6,7 +6,7 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 15:34:00 by xli               #+#    #+#              #
-#    Updated: 2021/05/19 10:14:45 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/22 15:36:04 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ INCLUDES = $(INCLUDES_PATH)push_swap.h
 
 SRCS_PATH = srcs/push_swap/
 
-SRCS_FILES = big_solve.c push_swap.c
+SRCS_FILES = small_solve.c big_solve.c push_swap.c
 
 MAIN = srcs/push_swap/main.c
 
@@ -38,12 +38,12 @@ SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 
 #CHECKER_SRCS = $(addprefix $(CHECKER_PATH), $(CHECKER_FILES))
 
-PARSE_PATH = srcs/parse/
+SHARE_PATH = srcs/share/
 
-PARSE_FILES = operation0.c operation1.c operation2.c operation3.c exit.c\
-			parse0.c parse1.c
+SHARE_FILES = operation0.c operation1.c operation2.c operation3.c\
+			parse0.c parse1.c utils.c
 
-PARSE_SRCS = $(addprefix $(PARSE_PATH), $(PARSE_FILES))
+SHARE_SRCS = $(addprefix $(SHARE_PATH), $(SHARE_FILES))
 
 LIB_PATH = libft/
 
@@ -55,7 +55,7 @@ OBJS = $(SRCS:.c=.o)
 
 #CHECKER_MAIN_OBJS = $(CHECKER_MAIN:.c=.o)
 
-PARSE_OBJS = $(PARSE_SRCS:.c=.o)
+SHARE_OBJS = $(SHARE_SRCS:.c=.o)
 
 MAIN_OBJS = $(MAIN:.c=.o)
 
@@ -68,8 +68,8 @@ all : $(NAME) $(CHECKER)
 $(LIB) :
 	@$(MAKE) -C $(LIB_PATH)
 
-$(NAME) : $(INCLUDES) $(OBJS) $(PARSE_OBJS) $(MAIN_OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(PARSE_OBJS) $(MAIN_OBJS) $(LIB) -o $(NAME)
+$(NAME) : $(INCLUDES) $(OBJS) $(SHARE_OBJS) $(MAIN_OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) $(SHARE_OBJS) $(MAIN_OBJS) $(LIB) -o $(NAME)
 
 #$(CHECKER) : $(INCLUDES) $(CHECKER_OBJS) $(PARSE_OBJS) $(CHECKER_MAIN_OBJS)
 #	@$(CC) $(CFLAGS) $(CHECKER_OBJS) $(PARSE_OBJS) $(CHECKER_MAIN_OBJS) $(LIB) -o $(CHECKER)
@@ -80,7 +80,7 @@ clean :
 	@echo "clean done"
 
 fclean :
-	@rm -rf $(OBJS) $(PARSE_OBJS) $(MAIN_OBJS)
+	@rm -rf $(OBJS) $(SHARE_OBJS) $(MAIN_OBJS)
 	@rm -rf $(NAME)
 	@$(MAKE) fclean -C $(LIB_PATH)
 	@echo "fclean done"

@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:14:03 by xli               #+#    #+#             */
-/*   Updated: 2021/05/21 12:10:38 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 18:43:33 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,9 @@ void	do_operations(t_deque *stack[2], char *str, t_deque *operations)
 {
 	assign_operation(stack, str);
 	deque_push_back(operations, str);
+	if ((int)ft_strlen(str) == 2)
+		write(1, str, 2);
+	if ((int)ft_strlen(str) == 3)
+		write(1, str, 3);
+	write(1, "\n", 1);
 }

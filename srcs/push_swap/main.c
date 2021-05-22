@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:14:39 by xli               #+#    #+#             */
-/*   Updated: 2021/05/21 12:27:40 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 13:42:02 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void	init(int ct[2], int *arr[2], t_deque *stack[2])
 {
 	if (ct[1] < 2)
 		normal_exit();
-	if (!(stack[0] = init_deque()))
-		error_exit();
-	if (!(stack[1] = init_deque()))
+	stack[0] = init_deque();
+	stack[1] = init_deque();
+	if (!stack[0] || !stack[1])
 		error_exit();
 	init_stack(stack[0], arr[0], ct[1]);
 	arr[1] = ft_malloc(ct[1], sizeof(int));
@@ -31,6 +31,29 @@ static void	init(int ct[2], int *arr[2], t_deque *stack[2])
 	ct[0] = -1;
 	while (++ct[0] < ct[1])
 		arr[1][ct[0]] = arr[0][ct[0]];
+}
+
+static void	index_nb(t_deque *a, int *arr[2], int arr_size)
+{
+	int		ct[2];
+
+	ct[0] = -1;
+	while (++ct[0] < arr_size)
+	{
+		ct[1] = -1;
+		while (++ct[1] < arr_size)
+		{
+			if (arr[0][ct[0]] == arr[1][ct[1]])
+			{
+				arr[0][ct[0]] = ct[1];
+				break ;
+			}
+		}
+	}
+	a = init_deque();
+	ct[0] = -1;
+	while (++ct[0] < arr_size)
+		deque_push_front(a, arr + ct[0]);
 }
 
 int	main(int ac, char **av)
@@ -52,5 +75,6 @@ int	main(int ac, char **av)
 	//	iter = iter->next;
 	//}
 	push_swap(stack);
+	//getchar();
 	normal_exit();
 }
