@@ -24,7 +24,7 @@ void	small_solve(t_deque *stack[2], t_deque *operations)
 	while (++ct < stack[0]->size)
 	{
 
-		if (get_pos(get_min(stack), stack) < (stack[0]->size / 2))
+		if (get_pos(get_min(stack), stack) <= (stack[0]->size / 2))
 		{
 			//printf("top: %d\n", *(int *)stack[0]->tail->content);
 			if (get_min(stack) == *(int *)stack[0]->tail->content)
