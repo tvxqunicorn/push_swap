@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_solve.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:10:57 by xli               #+#    #+#             */
-/*   Updated: 2021/05/22 18:08:50 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 21:47:31 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,24 @@ void	small_solve(t_deque *stack[2], t_deque *operations)
 		{
 			//printf("top: %d\n", *(int *)stack[0]->tail->content);
 			if (get_min(stack) == *(int *)stack[0]->tail->content)
-				do_operations(stack, "pb", operations);
+			{
+				if (*(int *)stack[0]->head->content == 1)
+					do_operations(stack, "rra", operations);
+				else
+					do_operations(stack, "pb", operations);
+			}
 			else
 			{
-				do_operations(stack, "ra", operations);
+				if (*(int *)stack[0]->tail->content == 1 && *(int *)stack[0]->tail->last->content == 0)
+					do_operations(stack, "sa", operations);
+				else
+					do_operations(stack, "ra", operations);
 			}
 		}
 		else
 		{
 			//printf("bottom: %d\n", *(int *)stack[0]->head->content);
-			if (get_min(stack) == *(int *)stack[0]->head->content)
-			{
-				do_operations(stack, "rra", operations);
-				do_operations(stack, "pb", operations);
-			}
-			else
-				do_operations(stack, "rra", operations);
+			do_operations(stack, "rra", operations);
 		}
 		if (stack_a_is_sorted(stack))
 			break ;
