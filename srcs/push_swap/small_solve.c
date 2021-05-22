@@ -6,43 +6,65 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:10:57 by xli               #+#    #+#             */
-/*   Updated: 2021/05/22 18:08:50 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 22:16:43 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	exception0(t_deque *stack[2], t_deque *operations)
+{
+	t_deque_list	*temp;
+
+	if (stack[0]->size != 3)
+		return (0);
+	temp = stack[0]->tail;
+	if (*((int *)temp->content) != 2)
+		return (0);
+	temp = temp->last;
+	if (*((int *)temp->content) != 1)
+		return (0);
+	temp = temp->last;
+	if (*((int *)temp->content) != 0)
+		return (0);
+	do_operations(stack, "rra", operations);
+	return (1);
+}
+
+static int	exception1(t_deque *stack[2], t_deque *operations)
+{
+	t_deque_list	*temp;
+
+	if (stack[0]->size != 3)
+		return (0);
+	temp = stack[0]->tail;
+	if (*((int *)temp->content) != 1)
+		return (0);
+	temp = temp->last;
+	if (*((int *)temp->content) != 0)
+		return (0);
+	temp = temp->last;
+	if (*((int *)temp->content) != 2)
+		return (0);
+	do_operations(stack, "ra", operations);
+	return (1);
+}
+
 void	small_solve(t_deque *stack[2], t_deque *operations)
 {
-	//int	top;
-	//int	bottom;
-
-	//top = *(int *)stack[0]->tail->content;
-	//bottom = *(int *)stack[0]->head->content;
+	if (exception0(stack, operations) || exception1(stack, operations))
+		return ;
 	while (stack[0]->size > 2)
 	{
-
 		if (get_pos(get_min(stack), stack) <= (stack[0]->size / 2))
 		{
-			//printf("top: %d\n", *(int *)stack[0]->tail->content);
 			if (get_min(stack) == *(int *)stack[0]->tail->content)
 				do_operations(stack, "pb", operations);
 			else
-			{
 				do_operations(stack, "ra", operations);
-			}
 		}
 		else
-		{
-			//printf("bottom: %d\n", *(int *)stack[0]->head->content);
-			if (get_min(stack) == *(int *)stack[0]->head->content)
-			{
-				do_operations(stack, "rra", operations);
-				do_operations(stack, "pb", operations);
-			}
-			else
-				do_operations(stack, "rra", operations);
-		}
+			do_operations(stack, "rra", operations);
 		if (stack_a_is_sorted(stack))
 			break ;
 	}
