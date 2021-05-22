@@ -18,7 +18,7 @@ int	stack_a_is_sorted(t_deque *stack[2])
 	int				ct;
 
 	temp = stack[0]->tail;
-	ct = -1;
+	ct = 0;
 	while (++ct < stack[0]->size)
 	{
 		if (*((int *)temp->content) > *((int *)temp->last->content))

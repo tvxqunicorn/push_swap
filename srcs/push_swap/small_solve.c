@@ -16,12 +16,10 @@ void	small_solve(t_deque *stack[2], t_deque *operations)
 {
 	//int	top;
 	//int	bottom;
-	int	ct;
 
 	//top = *(int *)stack[0]->tail->content;
 	//bottom = *(int *)stack[0]->head->content;
-	ct = -1;
-	while (++ct < stack[0]->size)
+	while (stack[0]->size > 2)
 	{
 
 		if (get_pos(get_min(stack), stack) <= (stack[0]->size / 2))
@@ -32,7 +30,6 @@ void	small_solve(t_deque *stack[2], t_deque *operations)
 			else
 			{
 				do_operations(stack, "ra", operations);
-				do_operations(stack, "pb", operations);
 			}
 		}
 		else
@@ -49,6 +46,8 @@ void	small_solve(t_deque *stack[2], t_deque *operations)
 		if (stack_a_is_sorted(stack))
 			break ;
 	}
+	if (!stack_a_is_sorted(stack))
+		do_operations(stack, "sa", operations);
 	while (stack[1]->size > 0)
 		do_operations(stack, "pa", operations);
 }
