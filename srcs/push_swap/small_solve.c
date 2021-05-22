@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:10:57 by xli               #+#    #+#             */
-/*   Updated: 2021/05/22 22:16:43 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 22:28:40 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	exception0(t_deque *stack[2], t_deque *operations)
 	temp = temp->last;
 	if (*((int *)temp->content) != 0)
 		return (0);
+	do_operations(stack, "sa", operations);
 	do_operations(stack, "rra", operations);
 	return (1);
 }
@@ -46,7 +47,7 @@ static int	exception1(t_deque *stack[2], t_deque *operations)
 	temp = temp->last;
 	if (*((int *)temp->content) != 2)
 		return (0);
-	do_operations(stack, "ra", operations);
+	do_operations(stack, "sa", operations);
 	return (1);
 }
 
