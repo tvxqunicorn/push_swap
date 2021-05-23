@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:14:39 by xli               #+#    #+#             */
-/*   Updated: 2021/05/22 13:42:02 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/23 08:40:25 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,8 @@ int	main(int ac, char **av)
 
 	ct[1] = get_arr_size(arr, ac, av);
 	init(ct, arr, stack);
-	ft_sort(arr[1], ct[1]); //sorted done
-	//for (int i = 0; i < ct[1] ; i++)
-	//	printf("sorted = %d\n", arr[1][i]);
-	index_nb(stack[0], arr, ct[1]); //index done
-	//t_deque_list	*iter = stack[0]->head;
-	//while (iter)
-	//{
-	//	printf("indexed = %d\n", *((int*)iter->content));
-	//	iter = iter->next;
-	//}
+	ft_sort(arr[1], ct[1]);
+	index_nb(stack[0], arr, ct[1]);
 	push_swap(stack);
-	//getchar();
 	normal_exit();
 }

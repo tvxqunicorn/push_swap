@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 12:01:42 by xli               #+#    #+#             */
-/*   Updated: 2021/05/22 17:14:08 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/23 08:46:25 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_atoi_with_range(char **str)
 	return (ct[1] * ct[2]);
 }
 
-int get_min(t_deque *stack[2])
+int	get_min(t_deque *stack[2])
 {
 	t_deque_list	*temp;
 	int				min;

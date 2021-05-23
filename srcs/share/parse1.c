@@ -6,7 +6,7 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:28:00 by xli               #+#    #+#             */
-/*   Updated: 2021/05/22 17:52:43 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/23 08:41:14 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	is_sorted(t_deque *stack[2])
 	ct = -1;
 	while (++ct < stack[0]->size)
 	{
-		//printf("temp->content = %d\n", *(int *)temp->content);
 		if (*((int *)temp->content) != ct)
 			return (0);
 		temp = temp->last;
