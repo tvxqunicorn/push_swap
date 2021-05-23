@@ -6,34 +6,29 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 08:42:16 by xli               #+#    #+#             */
-/*   Updated: 2021/05/23 08:42:48 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/23 18:21:11 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_instructions(char *str)
+int	checker(int *arr, int arr_size, t_list *operations)
 {
-	if (!ft_strncmp(str, "sa", 3))
-		return ;
-	if (!ft_strncmp(str, "sb", 3))
-		return ;
-	if (!ft_strncmp(str, "ss", 3))
-		return ;
-	if (!ft_strncmp(str, "pa", 3))
-		return ;
-	if (!ft_strncmp(str, "pb", 3))
-		return ;
-	if (!ft_strncmp(str, "ra", 3))
-		return ;
-	if (!ft_strncmp(str, "rb", 3))
-		return ;
-	if (!ft_strncmp(str, "rr", 3))
-		return ;
-	if (!ft_strncmp(str, "rra", 4))
-		return ;
-	if (!ft_strncmp(str, "rrb", 4))
-		return ;
-	if (!ft_strncmp(str, "rrr", 4))
-		return ;
+	t_deque	*stack[2];
+
+	stack[0] = init_deque();
+	stack[1] = init_deque();
+	if (!stack[0] || !stack[1])
+		error_exit();
+	init_stack(stack[0], arr, arr_size);
+	while (operations)
+	{
+		assign_operation(stack, operations->content);
+		operations = operations->next;
+	}
+	if (stack[1]->size)
+		return (0);
+	if (!stack_a_is_sorted(stack))
+		return (0);
+	return (1);
 }

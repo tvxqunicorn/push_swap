@@ -6,7 +6,7 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/25 13:44:54 by xli               #+#    #+#              #
-#    Updated: 2021/05/17 16:33:23 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/23 17:49:31 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,19 +70,22 @@ BONUS_SRCS =	ft_lstnew.c \
 				get_next_line.c \
 				get_next_line_utils.c
 
-HEADER = libft.h
+HEADER = libft.h get_next_line.h
 
 OBJS = $(SRCS:.c=.o)
 
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-$(NAME):$(OBJS) $(BONUS_OBJS)
-		@ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
-
 all:	$(NAME)
 
 bonus:	$(OBJS) $(BONUS_OBJS)
 		@ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+
+$(NAME): $(HEADER) $(OBJS) $(BONUS_OBJS)
+		@ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+
+%.o : %.c $(HEADER)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 		@rm -rf $(OBJS) $(BONUS_OBJS)

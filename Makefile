@@ -6,13 +6,13 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 15:34:00 by xli               #+#    #+#              #
-#    Updated: 2021/05/22 15:36:04 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/23 17:57:04 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-#CHECKER = checker
+CHECKER = checker
 
 CC = cc
 
@@ -30,13 +30,13 @@ MAIN = srcs/push_swap/main.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 
-#CHECKER_PATH = srcs/checker/
+CHECKER_PATH = srcs/checker/
 
-#CHECKER_FILES =
+CHECKER_FILES = checker.c
 
-#CHECKER_MAIN = srcs/checker/main.c
+CHECKER_MAIN = srcs/checker/main.c
 
-#CHECKER_SRCS = $(addprefix $(CHECKER_PATH), $(CHECKER_FILES))
+CHECKER_SRCS = $(addprefix $(CHECKER_PATH), $(CHECKER_FILES))
 
 SHARE_PATH = srcs/share/
 
@@ -51,9 +51,9 @@ LIB = $(LIB_PATH)libft.a
 
 OBJS = $(SRCS:.c=.o)
 
-#CHECKER_OBJS = $(CHECKER_SRCS:.c=.o)
+CHECKER_OBJS = $(CHECKER_SRCS:.c=.o)
 
-#CHECKER_MAIN_OBJS = $(CHECKER_MAIN:.c=.o)
+CHECKER_MAIN_OBJS = $(CHECKER_MAIN:.c=.o)
 
 SHARE_OBJS = $(SHARE_SRCS:.c=.o)
 
@@ -71,11 +71,11 @@ $(LIB) :
 $(NAME) : $(INCLUDES) $(OBJS) $(SHARE_OBJS) $(MAIN_OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(SHARE_OBJS) $(MAIN_OBJS) $(LIB) -o $(NAME)
 
-#$(CHECKER) : $(INCLUDES) $(CHECKER_OBJS) $(PARSE_OBJS) $(CHECKER_MAIN_OBJS)
-#	@$(CC) $(CFLAGS) $(CHECKER_OBJS) $(PARSE_OBJS) $(CHECKER_MAIN_OBJS) $(LIB) -o $(CHECKER)
+$(CHECKER) : $(INCLUDES) $(CHECKER_OBJS) $(SHARE_OBJS) $(CHECKER_MAIN_OBJS)
+	@$(CC) $(CFLAGS) $(CHECKER_OBJS) $(SHARE_OBJS) $(CHECKER_MAIN_OBJS) $(LIB) -o $(CHECKER)
 
 clean :
-	@rm -rf $(OBJS) $(PARSE_OBJS) $(MAIN_OBJS)
+	@rm -rf $(OBJS) $(SHARE_OBJS) $(MAIN_OBJS)
 	@$(MAKE) clean -C $(LIB_PATH)
 	@echo "clean done"
 
