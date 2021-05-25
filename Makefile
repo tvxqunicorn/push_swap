@@ -6,7 +6,7 @@
 #    By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 15:34:00 by xli               #+#    #+#              #
-#    Updated: 2021/05/23 18:23:23 by xli              ###   ########lyon.fr    #
+#    Updated: 2021/05/25 11:01:18 by xli              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,7 @@ clean :
 
 fclean :
 	@rm -rf $(OBJS) $(CHECKER_OBJS) $(SHARE_OBJS) $(MAIN_OBJS) $(CHECKER_MAIN_OBJS)
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(CHECKER)
 	@$(MAKE) fclean -C $(LIB_PATH)
 	@echo "fclean done"
 

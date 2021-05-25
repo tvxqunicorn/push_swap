@@ -6,13 +6,13 @@
 /*   By: xli <xli@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 08:56:00 by xli               #+#    #+#             */
-/*   Updated: 2021/05/23 18:14:21 by xli              ###   ########lyon.fr   */
+/*   Updated: 2021/05/25 10:53:38 by xli              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int		*arr;
 	int		arr_size;
